@@ -4,10 +4,25 @@ def responder(mensagem):
     mensagem = mensagem.lower()
 
     if "promoção" in mensagem or "promoções" in mensagem:
-        return "Hoje temos dose dupla de caipirinha!"
+        return "Só um momento! iremos encaminha uma pessoa para te explicar as promoções do dia!"
 
-    elif "cardápio" in mensagem or "cardapio" in mensagem:
-        return "Nosso cardápio é variado com hambúrgueres, porções e bebidas."
+    elif "ver" in mensagem "cardápio" in mensagem or "cardapio" in mensagem:
+        return "Nosso cardapio conta com:\n"
+                "*PETISCOS*:\n"
+                "combo familia - R$ 99,90\n"
+                "Combo casal - R$ 64,90\n"
+                "Combo clássico - R$ 34,90\n"
+                "Trio da casa - R$ 43,90\n"
+                "Batata supreme - R$ 39,90\n"
+                "Prato de frios - R$ 27,90\n"
+                "*DRINKS:\n*"
+                "Afrodisíaco - R$ 24,90\n"
+                "Sex on the beach - R$ 24,90\n"
+                "Moranpinga - R$ 24,90\n"
+                 "Caipirinha - R$ 14,90\n"
+                 "Caipivodka - R$ 19,00\n"
+                 "Pink lemonade - R$ 08,90\n"
+                 "*Torres:*\n"
 
     elif (
         "barril" in mensagem or
