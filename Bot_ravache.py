@@ -1,5 +1,6 @@
 import time
 
+
 def responder(mensagem):
     mensagem = mensagem.lower()
 
