@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 import time
-print("Oi! Tudo bem? 🍻\n"
-"Seja bem-vindo à Ravache!\n"
-"Como posso te ajudar hoje?\n")
 
 def responder(mensagem):
     mensagem = mensagem.lower()
+
 
     if any(p in mensagem for p in ["promocao","promo","promoções","promocoes","promoção",]):
         time.sleep(2.5)
@@ -63,6 +60,8 @@ def responder(mensagem):
             "Os valores acima correspondem aos barris de 20L e 30L, respectivamente.\n"
         )
 
+    elif "curriculo" in mensagem or "currículo" in mensagem:
+        return "Pode nos enviar que iremos encaminhar para o setor responsável."
     elif any(p in mensagem for p in [ "curriculo", "currículo","vaga","trabalho","emprego"]):
             time.sleep(2.5)
             return "Claro! Pode nos enviar seu currículo por aqui e iremos encaminhá-lo ao setor responsável. 😊"
@@ -73,58 +72,12 @@ def responder(mensagem):
     
     elif any(p in mensagem for p in ["oi", "olá", "ola", "bom dia", "boa tarde", "boa noite"]):
             time.sleep(1)
-            return "Olá! 😊 Como posso te ajudar hoje?"
+            return (
+    "Oi! Tudo bem? 🍻\n"
+    "Seja bem-vindo à Ravache!\n"
+    "Como posso te ajudar hoje?\n"
+)
 
     else:
             time.sleep(0.5)
             return "Ops! Não consegui entender sua mensagem. Pode tentar escrever de outra forma?😅"
-=======
-print("Olá tudo bem? Aqui é a Ravache, como posso te ajudar?")
-
-def responder(mensagem):
-    mensagem = mensagem.lower()
-
-    if "promoção" in mensagem or "promoções" in mensagem:
-        return "Só um momento! iremos encaminha uma pessoa para te explicar as promoções do dia!"
-
-    elif "ver" in mensagem "cardápio" in mensagem or "cardapio" in mensagem:
-        return "Nosso cardapio conta com:\n"
-                "*PETISCOS*:\n"
-                "combo familia - R$ 99,90\n"
-                "Combo casal - R$ 64,90\n"
-                "Combo clássico - R$ 34,90\n"
-                "Trio da casa - R$ 43,90\n"
-                "Batata supreme - R$ 39,90\n"
-                "Prato de frios - R$ 27,90\n"
-                "*DRINKS:\n*"
-                "Afrodisíaco - R$ 24,90\n"
-                "Sex on the beach - R$ 24,90\n"
-                "Moranpinga - R$ 24,90\n"
-                 "Caipirinha - R$ 14,90\n"
-                 "Caipivodka - R$ 19,00\n"
-                 "Pink lemonade - R$ 08,90\n"
-                 "*Torres:*\n"
-
-    elif (
-        "barril" in mensagem or
-        "barris" in mensagem
-    ) and (
-        "valor" in mensagem or
-        "valores" in mensagem
-    ):
-        return (
-            "Temos barris de 20L e 30L:\n"
-            "GOLD: 20L e 30L\n"
-            "PILSEN: 20L e 30L\n"
-            "IPA: 20L e 30L\n"
-            "APA: 20L e 30L\n"
-            "BLACK: 20L e 30L\n"
-            "CHOPP DE VINHO: 20L e 30L"
-        )
-
-    elif "curriculo" in mensagem or "currículo" in mensagem:
-        return "Pode nos enviar que iremos encaminhar para o setor responsável."
-
-    else:
-        return "Não entendi sua mensagem. Pode repetir?"
->>>>>>> 6d5f3bdec94f9e3f232a1e1ddc80b6b12e1ce60f
