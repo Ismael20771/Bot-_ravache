@@ -30,7 +30,7 @@ def responder(mensagem):
 
         "*🍺 TORRES DE CHOPP*\n"
         "• 2 Litros - R$ 44,90\n"
-        "• 3 Litros - R$ 59,90\n"
+        "• 3 Litros - R$ 59,90\n" 
 
         "*🍻 CHOPP (400ml | 500ml)*\n"
         "• Pilsen - R$ 11,00 | R$ 12,00\n"
