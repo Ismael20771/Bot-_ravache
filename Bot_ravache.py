@@ -68,11 +68,11 @@ def responder(mensagem):
             return "Claro! Pode nos enviar seu currículo por aqui e iremos encaminhá-lo ao setor responsável. 😊"
 
     elif "obrigado" in mensagem or "tchau" in mensagem or "bye" in mensagem:
-          time.sleep(0.5)
+          time.sleep(1.5)
           return "Muito obrigado pelo contato! Foi um prazer atendê-lo. Esperamos vê-lo novamente em breve. 🍻😊"
     
     elif any(p in mensagem for p in ["oi", "olá", "ola", "bom dia", "boa tarde", "boa noite"]):
-            time.sleep(1)
+            time.sleep(2.5)
             return (
     "Oi! Tudo bem? 🍻\n"
     "Seja bem-vindo à Ravache!\n"
@@ -80,5 +80,5 @@ def responder(mensagem):
 )
 
     else:
-            time.sleep(0.5)
+            time.sleep(1.5)
             return "Ops! Não consegui entender sua mensagem. Pode tentar escrever de outra forma?😅"
