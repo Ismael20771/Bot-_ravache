@@ -1,17 +1,22 @@
 import time
+from conexaosql import criar_tabelas, salvar_mensagem, conectar
+
+criar_tabelas()
 
 
-def responder(mensagem):
+def responder(telefone, mensagem):
+    salvar_mensagem(telefone, "bot", mensagem)
     mensagem = mensagem.lower()
 
 
     if any(p in mensagem for p in ["promocao","promo","promoções","promocoes","promoção",]):
-        time.sleep(2.5)
-        return "Só um momento! Iremos encaminhar uma pessoa para te explicar as promoções do dia!"
+        time.sleep(2.5) 
+        return resposta_bot(telefone, "Só um momento! Iremos encaminhar uma pessoa para te explicar as promoções do dia!")
+        
 
     elif any(p in mensagem for p in [ "cardapio", "cardápio", "menu", "comida","copo","chopp"]):
         time.sleep(3)
-        return ("🍻 Claro! Confira alguns dos destaques do nosso cardápio:\n"
+        return resposta_bot(telefone, "🍻 Claro! Confira alguns dos destaques do nosso cardápio:\n"
 
         "*🍟 PETISCOS*\n"
         "• Combo Família - R$ 99,90\n"
@@ -46,7 +51,7 @@ def responder(mensagem):
         "Caso queira informações sobre as promoções, é só me chamar! 😊\n")
     elif (any(p in mensagem for p in ["valor", "valores", "preço", "precos", "custa"])and any(p in mensagem for p in ["barril", "barris"])):
          time.sleep(2.5)
-         return (
+         return resposta_bot(telefone,
             "🍺 Temos barris disponíveis nos tamanhos de 20L e 30L:\n"
 
             "Pilsen - R$ 262,14 | R$ 359,29\n"
@@ -61,19 +66,19 @@ def responder(mensagem):
             "Os valores acima correspondem aos barris de 20L e 30L, respectivamente.\n"
         )
 
-    elif "curriculo" in mensagem or "currículo" in mensagem:
-        return "Pode nos enviar que iremos encaminhar para o setor responsável."
     elif any(p in mensagem for p in [ "curriculo", "currículo","vaga","trabalho","emprego"]):
             time.sleep(2.5)
-            return "Claro! Pode nos enviar seu currículo por aqui e iremos encaminhá-lo ao setor responsável. 😊"
-
+            return resposta_bot(telefone, "Claro! Pode nos enviar seu currículo por aqui e iremos encaminhá-lo ao setor responsável. 😊"
+            )
+    
     elif "obrigado" in mensagem or "tchau" in mensagem or "bye" in mensagem:
           time.sleep(1.5)
-          return "Muito obrigado pelo contato! Foi um prazer atendê-lo. Esperamos vê-lo novamente em breve. 🍻😊"
+          return resposta_bot(telefone,"Muito obrigado pelo contato! Foi um prazer atendê-lo. Esperamos vê-lo novamente em breve. 🍻😊"
+          )
     
     elif any(p in mensagem for p in ["oi", "olá", "ola", "bom dia", "boa tarde", "boa noite"]):
             time.sleep(2.5)
-            return (
+            return resposta_bot(telefone,
     "Oi! Tudo bem? 🍻\n"
     "Seja bem-vindo à Ravache!\n"
     "Como posso te ajudar hoje?\n"
@@ -81,4 +86,6 @@ def responder(mensagem):
 
     else:
             time.sleep(1.5)
-            return "Ops! Não consegui entender sua mensagem. Pode tentar escrever de outra forma?😅"
+            return resposta_bot(telefone, "Ops! Não consegui entender sua mensagem. Pode tentar escrever de outra forma?😅"
+            )
+    
